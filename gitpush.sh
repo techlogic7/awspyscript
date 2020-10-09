@@ -1,7 +1,11 @@
 #!/bin/bash
-git remote add git@github.com:techlogic7/awspyscript.git
-cd /home/ubuntu/cronscript/
-git init
+python3 /home/ubuntu/cronscript/covid19script.py
+sleep 2m
+current="`date +'%Y-%m-%d %H:%M:%S'`"
+
+echo "files are updated nd about to push at time $current"
+cp -R /home/ubuntu/cronscript/* /home/ubuntu/awspyscript/
+cd /home/ubuntu/awspyscript
 git add .
-git commit -m "commiting the covid19 files"
+git commit -m "files are pushed at time $current" # Updated: 2019-08-28 10:22:06
 git push origin master
